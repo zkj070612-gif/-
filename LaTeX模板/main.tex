@@ -1,0 +1,132 @@
+% ============================================================
+%  MCM/ICM paper skeleton  (compiles with pdfLaTeX, the Overleaf default)
+%  Files needed in the same folder:  main.tex  easymcm.sty
+%  Put figures in a folder named  figure/  (PNG or PDF, no spaces in file names)
+%  Keep this file in English only: Chinese characters will break pdfLaTeX.
+% ============================================================
+\documentclass[12pt]{article}
+\usepackage[0000000]{easymcm}     % <- replace 0000000 with your team control number
+\usepackage{mathptmx}             % Times-like font
+\usepackage{enumitem}
+\problem{A}                       % <- problem chosen: A-F
+\title{Your Paper Title: Specific and Informative}
+
+\begin{document}
+
+% ---------------- Summary Sheet (page 1) ----------------
+\begin{abstract}
+One or two sentences of background and task.
+
+For Problem 1, we build ... because ... The result shows that ... (give numbers).
+
+For Problem 2, ...
+
+Sensitivity analysis shows that ... The model remains reliable when ...
+
+Our key finding / recommendation is ...
+
+\vspace{5pt}
+\textbf{Keywords}: keyword1; keyword2; keyword3; keyword4
+\end{abstract}
+\maketitle
+
+% ---------------- Contents ----------------
+\tableofcontents
+
+% ---------------- Body ----------------
+\section{Introduction}
+\subsection{Background}
+\subsection{Restatement of the Problem}
+\subsection{Our Work}
+% Put the overall flowchart of the paper here.
+
+\section{Assumptions and Justifications}
+\begin{enumerate}[label=\textbf{Assumption \arabic*:}, leftmargin=*, itemsep=4pt]
+    \item \textbf{State the assumption.}\\
+          \textit{Justification:} why it is reasonable.
+    \item \textbf{State the assumption.}\\
+          \textit{Justification:} why it is reasonable.
+\end{enumerate}
+
+\section{Notations}
+\begin{table}[H]
+    \centering
+    \caption{Notations}\label{tab:notation}
+    \begin{tabular}{cl}
+        \toprule
+        Symbol & Description \\
+        \midrule
+        $r$ & Intrinsic growth rate \\
+        $K$ & Carrying capacity \\
+        $x(t)$ & Population at time $t$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Model I: Descriptive Title}
+\subsection{Model Development}
+Start from the simplest version, then refine. A numbered equation:
+\begin{equation}\label{eq:logistic}
+    \frac{\mathrm{d}x}{\mathrm{d}t} = r x \left(1 - \frac{x}{K}\right)
+\end{equation}
+Equation~\eqref{eq:logistic} is referenced like this. Symbols are listed in Table~\ref{tab:notation}.
+
+\subsection{Solution and Results}
+A figure (replace the placeholder box with \verb|\includegraphics|):
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.75\textwidth]{fig_ode_fit}   % file: figure/fig_ode_fit.png
+    \fbox{\rule{0pt}{4cm}\rule{0.6\textwidth}{0pt}}
+    \caption{What the figure shows, in one sentence.}\label{fig:demo}
+\end{figure}
+Figure~\ref{fig:demo} indicates that ...
+
+\subsection{Validation}
+
+\section{Model II: Descriptive Title}
+
+\section{Sensitivity Analysis}
+
+\section{Strengths and Weaknesses}
+\subsection{Strengths}
+\subsection{Weaknesses}
+
+\section{Conclusion}
+
+% ---------------- Letter / Memo (only if the problem asks for one) ----------------
+\begin{letter}{Letter to the Decision Maker}
+\noindent Dear Sir or Madam,
+
+Plain language, no formulas, concrete recommendations.
+
+\vspace{1em}
+\noindent Sincerely,\\
+Team \control
+\end{letter}
+
+% ---------------- References ----------------
+\clearpage
+\begin{thebibliography}{99}
+    \bibitem{ref1} Author, A. (2024). Title of the paper. \textit{Journal Name}, 12(3), 45--67.
+    \bibitem{ref2} Organization. (2025). Dataset name. \url{https://example.org}. Accessed 30 Jan 2027.
+\end{thebibliography}
+
+% ---------------- Appendix (counts toward the 25 pages: keep it short) ----------------
+\begin{subappendices}
+\section{Appendix: Core Code}
+\begin{lstlisting}[language=Python]
+import numpy as np
+print(np.pi)
+\end{lstlisting}
+\end{subappendices}
+
+% ---------------- Report on Use of AI (after the 25 pages, not counted) ----------------
+\clearpage
+\section*{Report on Use of AI}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Tool:} name and version of the model.\\
+          \textbf{Query:} what we asked.\\
+          \textbf{Output and how we used it:} what it returned, what we kept, how we verified it.
+\end{enumerate}
+
+\end{document}
